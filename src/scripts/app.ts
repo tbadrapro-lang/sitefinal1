@@ -245,13 +245,22 @@ document.addEventListener('DOMContentLoaded', () => {
       preloader.style.visibility = 'hidden';
     }
   });
-  
-  // Initialisation AOS
-  // @ts-ignore
-  if (typeof AOS !== 'undefined') {
-    // @ts-ignore
-    AOS.init({ duration: 1000, once: true, offset: 100 });
-  }
+  declare const AOS: any;
+
+// Données
+const entrees: MenuItem[] = [
+  { name: 'Velouté de Châtaigne', description: 'Onctueux, muscade fraîche.', price: '9 €', image: '/Velout%C3%A9%20de%20Ch%C3%A2taigne.png' },
+  { name: "Tartelette à l'Oignon", description: 'Pâte feuilletée, oignons caramélisés.', price: '9 €', image: '/Tartelette%20%C3%A0%20l\'Oignon.png' },
+  { name: 'Pâté de Campagne', description: 'Cornichons, salade croquante.', price: '9 €', image: '/P%C3%A2t%C3%A9%20de%20Campagne.png' },
+  { name: 'Rillette de Saumon', description: 'Crème d\'Isigny, pain toasté.', price: '10 €', image: '/Rillette%20de%20Saumon.png' },
+  { name: 'Ceviche de Bar', description: 'Agrumes, avocat, coriandre.', price: '11 €', image: '/Ceviche%20de%20Bar.png' },
+];
+
+const galleryImages: GalleryImage[] = [
+  { src: '/1.png', alt: 'Plat signature' },
+  { src: '/2.png', alt: 'Cocktail' },
+  // ...
+];
   
   // Header scroll effect
   window.addEventListener('scroll', () => {
