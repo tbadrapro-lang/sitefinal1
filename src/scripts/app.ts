@@ -1,4 +1,5 @@
 // Définition des types
+declare const AOS: any;
 interface MenuItem {
   name: string;
   description: string;
