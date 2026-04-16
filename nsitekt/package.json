@@ -1,0 +1,11 @@
+{
+  "name": "kitchen-bar-creteil",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && cp -r public/* dist/ && cp src/styles/*.css dist/"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
