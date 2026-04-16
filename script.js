@@ -1,10 +1,10 @@
-// Données
+// Données des entrées (noms exacts des fichiers image)
 const entrees = [
-  { name: 'Velouté de Châtaigne', description: 'Onctueux, muscade fraîche.', price: '9 €', image: 'Velout%C3%A9%20de%20Ch%C3%A2taigne.png' },
-  { name: "Tartelette à l'Oignon", description: 'Pâte feuilletée, oignons caramélisés.', price: '9 €', image: 'Tartelette%20%C3%A0%20l\'Oignon.png' },
-  { name: 'Pâté de Campagne', description: 'Cornichons, salade croquante.', price: '9 €', image: 'P%C3%A2t%C3%A9%20de%20Campagne.png' },
-  { name: 'Rillette de Saumon', description: 'Crème d\'Isigny, pain toasté.', price: '10 €', image: 'Rillette%20de%20Saumon.png' },
-  { name: 'Ceviche de Bar', description: 'Agrumes, avocat, coriandre.', price: '11 €', image: 'Ceviche%20de%20Bar.png' },
+  { name: 'Velouté de Châtaigne', description: 'Onctueux, muscade fraîche.', price: '9 €', image: 'Velouté de Châtaigne.png' },
+  { name: "Tartelette à l'Oignon", description: 'Pâte feuilletée, oignons caramélisés.', price: '9 €', image: "Tartelette à l'Oignon.png" },
+  { name: 'Pâté de Campagne', description: 'Cornichons, salade croquante.', price: '9 €', image: 'Pâté de Campagne.png' },
+  { name: 'Rillette de Saumon', description: "Crème d'Isigny, pain toasté.", price: '10 €', image: 'Rillette de Saumon.png' },
+  { name: 'Ceviche de Bar', description: 'Agrumes, avocat, coriandre.', price: '11 €', image: 'Ceviche de Bar.png' },
 ];
 
 const plats = [
@@ -221,4 +221,14 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
   });
+
+  // Débogage images (affiche dans la console les images qui ne chargent pas)
+  setTimeout(() => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.complete || img.naturalHeight === 0) {
+        console.warn('Image non chargée :', img.src);
+      }
+    });
+  }, 3000);
 });
